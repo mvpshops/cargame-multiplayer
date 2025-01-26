@@ -4,7 +4,7 @@ extends VehicleBody3D
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
 var steer_target = 0
-@export var engine_force_value = 40
+@export var engine_force_value = 1000000
 
 
 func _physics_process(delta):

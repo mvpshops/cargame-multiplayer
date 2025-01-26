@@ -46,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0, 0)
 
 [node name="wheal3" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02668, 0.286814, 1.26411)
+engine_force = 1024.0
 wheel_radius = 0.37
 wheel_rest_length = 0.095
 suspension_travel = 0.357

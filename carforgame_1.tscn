@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://dml41uhddckna"]
+
+[ext_resource type="PackedScene" uid="uid://bpibmub2vng4f" path="res://ImageToStl.com_carforgame1.glb" id="1_ewpsq"]
+[ext_resource type="Script" path="res://cars/BaseCar.gd" id="1_oyv0r"]
+[ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_iagl0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0c0kw"]
+font_size = 32
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpipw"]
+size = Vector3(7.63416, 170.899, 21.5974)
+
+[node name="carforgame1" type="VehicleBody3D"]
+transform = Transform3D(0.182675, 0, 0, 0, 0.182675, 0, 0, 0, 0.182675, 0, 0, 0)
+script = ExtResource("1_oyv0r")
+
+[node name="body" type="Node3D" parent="."]
+
+[node name="ImageToStl_com_carforgame1" parent="body" instance=ExtResource("1_ewpsq")]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="speed" type="Label" parent="Hud"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label" type="Label" parent="Hud"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Arow keys to drive
+Space to drift and break
+"
+label_settings = SubResource("LabelSettings_0c0kw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0378379, 0, 0, 0, 1, 0.0153199, 0.851391, -3.37668)
+shape = SubResource("BoxShape3D_hpipw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.809269, -8.62531e-15, -7.07486e-08, -3.01523e-08, 0.732093, 0.344902, 6.40016e-08, 0.344902, -0.732093, 7.55503, 15.5856, -22.2252)
+
+[node name="wheal0" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-6.66756, 0, -5.82897e-07, 0, 6.66756, 0, 5.82897e-07, 0, -6.66756, 3.47485, -1.4979, -9.09335)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+wheel_friction_slip = 3.0
+suspension_travel = 0.357
+suspension_stiffness = 30.0
+suspension_max_force = 10000.0
+
+[node name="Wheel" parent="wheal0" instance=ExtResource("2_iagl0")]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.0686635, 0, 0)
+
+[node name="wheal1" type="VehicleWheel3D" parent="."]
+transform = Transform3D(3.73235, 0, 0, 0, 3.73235, 0, 0, 0, 3.73235, -3.79195, -2.27812, -9.17247)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+wheel_friction_slip = 3.0
+suspension_travel = 0.357
+suspension_stiffness = 30.0
+suspension_max_force = 10000.0
+
+[node name="Wheel" parent="wheal1" instance=ExtResource("2_iagl0")]
+transform = Transform3D(-1.97834, 0, -1.72952e-07, 0, 1.97834, 0, 1.72952e-07, 0, -1.97834, 0.179599, 0.223003, 0)
+
+[node name="wheal2" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-6.30593, 0, -5.51282e-07, 0, 6.30593, 0, 5.51282e-07, 0, -6.30593, 4.50323, -1.34825, 1.14438)
+use_as_traction = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+wheel_friction_slip = 3.0
+suspension_travel = 0.357
+suspension_stiffness = 30.0
+suspension_max_force = 10000.0
+
+[node name="Wheel" parent="wheal2" instance=ExtResource("2_iagl0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0938048, 0, 0)
+
+[node name="wheal3" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-7.3104, 0, -6.39095e-07, 0, 7.3104, 0, 6.39095e-07, 0, -7.3104, -2.93099, -1.56176, 1.14438)
+engine_force = 1024.0
+use_as_traction = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+wheel_friction_slip = 3.0
+suspension_travel = 0.357
+suspension_stiffness = 30.0
+suspension_max_force = 10000.0
+
+[node name="Wheel" parent="wheal3" instance=ExtResource("2_iagl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775136, 0, 0)
