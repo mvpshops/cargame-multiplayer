@@ -36,7 +36,7 @@ func _physics_process(delta):
 	else:
 		brake = 0.0
 		
-	if Input.is_action_pressed("ui_select"):
+	if Input.is_action_pressed("brake"):
 		brake=3
 		$wheal2.wheel_friction_slip=0.8
 		$wheal3.wheel_friction_slip=0.8
