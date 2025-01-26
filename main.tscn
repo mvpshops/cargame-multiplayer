@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckt7l8hiomlkb"]
+[gd_scene load_steps=9 format=3 uid="uid://ckt7l8hiomlkb"]
 
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="2_4uho4"]
-[ext_resource type="Script" path="res://cars/BaseCar.gd" id="2_xb5tq"]
-[ext_resource type="PackedScene" uid="uid://bpibmub2vng4f" path="res://ImageToStl.com_carforgame1.glb" id="3_xdehb"]
-[ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="4_qvigt"]
+[ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="2_xsd2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -36,12 +34,6 @@ uv1_triplanar = true
 radial_segments = 20
 rings = 1
 
-[sub_resource type="LabelSettings" id="LabelSettings_0c0kw"]
-font_size = 32
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hpipw"]
-size = Vector3(7.63416, 170.899, 21.5974)
-
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -53,16 +45,13 @@ shadow_enabled = true
 directional_shadow_max_distance = 200.0
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(3.71035, 0, 0, 0, 0.547783, 0, 0, 0, 7.84687, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_2da72")
 use_collision = true
 
 [node name="box" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.925521, -0.968715, 0, 0.378697, 2.3675, 0, 0, 0, 1, 18.2289, -0.192802, 0)
+transform = Transform3D(0.90041, -1.11285, 0, 0.435042, 2.30327, 0, 0, 0, 1, 18.2289, -0.192802, 0)
 size = Vector3(7.59973, 0.135742, 10.8715)
-
-[node name="box2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, -4.09722, 1.32642, 0)
-size = Vector3(1, 1, 10.8715)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
 transform = Transform3D(233.866, 0, 0, 0, 82.3645, 0, 0, 0, 180.57, 0, 0, 0)
@@ -119,101 +108,6 @@ size = Vector3(0.3, 0.14044, 10.8715)
 transform = Transform3D(-0.00242604, 0, -0.999997, 0, 2.55802, 0, 0.999997, 0, -0.00242604, 1.59131, 0.169201, -18.9048)
 size = Vector3(0.3, 0.14044, 10.8715)
 
-[node name="carforgame1" type="VehicleBody3D" parent="."]
-transform = Transform3D(0.259576, 0, 0, 0, 0.259576, 0, 0, 0, 0.259576, -29.6867, 9.0361, -0.372295)
-script = ExtResource("2_xb5tq")
-engine_force_value = 90
-
-[node name="body" type="Node3D" parent="carforgame1"]
-
-[node name="ImageToStl_com_carforgame1" parent="carforgame1/body" instance=ExtResource("3_xdehb")]
-
-[node name="Hud" type="CanvasLayer" parent="carforgame1"]
-layer = 2
-
-[node name="speed" type="Label" parent="carforgame1/Hud"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-
-[node name="Label" type="Label" parent="carforgame1/Hud"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Arow keys to drive
-Space to drift and break
-"
-label_settings = SubResource("LabelSettings_0c0kw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="carforgame1"]
-transform = Transform3D(1, 0, 0, 0, 0.0378379, 0, 0, 0, 1, 0.0153199, 0.851391, -3.37668)
-shape = SubResource("BoxShape3D_hpipw")
-
-[node name="Camera3D" type="Camera3D" parent="carforgame1"]
-transform = Transform3D(-0.809269, -8.62531e-15, -7.07486e-08, -3.01523e-08, 0.732093, 0.344902, 6.40016e-08, 0.344902, -0.732093, 7.55503, 15.5856, -22.2252)
-
-[node name="wheal0" type="VehicleWheel3D" parent="carforgame1"]
-transform = Transform3D(6.66756, 0, 0, 0, 6.66756, 0, 0, 0, 6.66756, 3.47485, -1.4979, -9.09335)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
-wheel_friction_slip = 3.0
-suspension_travel = 0.357
-suspension_stiffness = 30.0
-suspension_max_force = 10000.0
-
-[node name="Wheel" parent="carforgame1/wheal0" instance=ExtResource("4_qvigt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0, 0)
-
-[node name="wheal1" type="VehicleWheel3D" parent="carforgame1"]
-transform = Transform3D(3.73235, 0, 0, 0, 3.73235, 0, 0, 0, 3.73235, -3.79195, -2.27812, -9.17247)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
-wheel_friction_slip = 3.0
-suspension_travel = 0.357
-suspension_stiffness = 30.0
-suspension_max_force = 10000.0
-
-[node name="Wheel" parent="carforgame1/wheal1" instance=ExtResource("4_qvigt")]
-transform = Transform3D(1.97834, 0, 0, 0, 1.97834, 0, 0, 0, 1.97834, 0.0732443, 0.223003, 0)
-
-[node name="wheal2" type="VehicleWheel3D" parent="carforgame1"]
-transform = Transform3D(6.30593, 0, 0, 0, 6.30593, 0, 0, 0, 6.30593, 3.76269, -1.34825, 1.14438)
-use_as_traction = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
-wheel_friction_slip = 3.0
-suspension_travel = 0.357
-suspension_stiffness = 30.0
-suspension_max_force = 10000.0
-
-[node name="Wheel" parent="carforgame1/wheal2" instance=ExtResource("4_qvigt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0, 0)
-
-[node name="wheal3" type="VehicleWheel3D" parent="carforgame1"]
-transform = Transform3D(7.3104, 0, 0, 0, 7.3104, 0, 0, 0, 7.3104, -4.54872, -1.56176, 1.14438)
-engine_force = 1024.0
-use_as_traction = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.37
-wheel_rest_length = 0.095
-wheel_friction_slip = 3.0
-suspension_travel = 0.357
-suspension_stiffness = 30.0
-suspension_max_force = 10000.0
-
-[node name="Wheel" parent="carforgame1/wheal3" instance=ExtResource("4_qvigt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775136, 0, 0)
+[node name="car" parent="." instance=ExtResource("2_xsd2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.10872, 14.6899, 72.8606)
+engine_force_value = 1000000

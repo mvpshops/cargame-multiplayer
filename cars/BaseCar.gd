@@ -3,7 +3,7 @@ extends VehicleBody3D
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
-var steer_target = 0
+var steer_target = 10
 @export var engine_force_value = 1000000
 
 

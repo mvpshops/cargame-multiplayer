@@ -8,7 +8,7 @@
 font_size = 32
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpipw"]
-size = Vector3(7.63416, 170.899, 21.5974)
+size = Vector3(1.41098, 19, 3.30356)
 
 [node name="carforgame1" type="VehicleBody3D"]
 transform = Transform3D(0.182675, 0, 0, 0, 0.182675, 0, 0, 0, 0.182675, 0, 0, 0)
@@ -17,6 +17,7 @@ script = ExtResource("1_oyv0r")
 [node name="body" type="Node3D" parent="."]
 
 [node name="ImageToStl_com_carforgame1" parent="body" instance=ExtResource("1_ewpsq")]
+transform = Transform3D(-0.146007, 0, -1.29234e-08, 0, 0.126123, 0, 1.27643e-08, 0, -0.147827, -0.476419, 0.636018, -1.32281)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 layer = 2
@@ -43,14 +44,14 @@ Space to drift and break
 label_settings = SubResource("LabelSettings_0c0kw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0378379, 0, 0, 0, 1, 0.0153199, 0.851391, -3.37668)
+transform = Transform3D(1, 0, 0, 0, 0.0378379, 0, 0, 0, 1, -0.501779, 0.693635, -0.828534)
 shape = SubResource("BoxShape3D_hpipw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.809269, -8.62531e-15, -7.07486e-08, -3.01523e-08, 0.732093, 0.344902, 6.40016e-08, 0.344902, -0.732093, 7.55503, 15.5856, -22.2252)
+transform = Transform3D(5.4742, 0, 0, 0, 4.95321, 2.3308, 0, -2.3308, 4.95321, -0.738114, 7.61073, 7.9263)
 
 [node name="wheal0" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-6.66756, 0, -5.82897e-07, 0, 6.66756, 0, 5.82897e-07, 0, -6.66756, 3.47485, -1.4979, -9.09335)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164246, 0.340338, -1.50006)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
@@ -62,10 +63,10 @@ suspension_stiffness = 30.0
 suspension_max_force = 10000.0
 
 [node name="Wheel" parent="wheal0" instance=ExtResource("2_iagl0")]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.0686635, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0.0964524, 0)
 
 [node name="wheal1" type="VehicleWheel3D" parent="."]
-transform = Transform3D(3.73235, 0, 0, 0, 3.73235, 0, 0, 0, 3.73235, -3.79195, -2.27812, -9.17247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11476, 0.340338, -1.50006)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.5
@@ -77,10 +78,10 @@ suspension_stiffness = 30.0
 suspension_max_force = 10000.0
 
 [node name="Wheel" parent="wheal1" instance=ExtResource("2_iagl0")]
-transform = Transform3D(-1.97834, 0, -1.72952e-07, 0, 1.97834, 0, 1.72952e-07, 0, -1.97834, 0.179599, 0.223003, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775137, 0.0964524, 0)
 
 [node name="wheal2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-6.30593, 0, -5.51282e-07, 0, 6.30593, 0, 5.51282e-07, 0, -6.30593, 4.50323, -1.34825, 1.14438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178756, 0.286814, 0.0275219)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_radius = 0.37
@@ -91,10 +92,10 @@ suspension_stiffness = 30.0
 suspension_max_force = 10000.0
 
 [node name="Wheel" parent="wheal2" instance=ExtResource("2_iagl0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0938048, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212859, 0.126443, -0.0643803)
 
 [node name="wheal3" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-7.3104, 0, -6.39095e-07, 0, 7.3104, 0, 6.39095e-07, 0, -7.3104, -2.93099, -1.56176, 1.14438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11805, 0.383267, -0.0208229)
 engine_force = 1024.0
 use_as_traction = true
 wheel_roll_influence = 0.5
@@ -106,4 +107,4 @@ suspension_stiffness = 30.0
 suspension_max_force = 10000.0
 
 [node name="Wheel" parent="wheal3" instance=ExtResource("2_iagl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775136, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00731099, 0.0299908, -0.0643803)
